@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding. etQuestion.setOnEditorActionListener(TextView.OnEditorActionListener { v, actionId, event ->
+        binding.etQuestion.setOnEditorActionListener(TextView.OnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEND) {
 
                 // setting response tv on below line.
@@ -36,8 +36,8 @@ class MainActivity : AppCompatActivity() {
 
                 // validating text
                 val question = binding.etQuestion.text.toString().trim()
-                Toast.makeText(this,question, Toast.LENGTH_SHORT).show()
-                if(question.isNotEmpty()){
+                Toast.makeText(this, question, Toast.LENGTH_SHORT).show()
+                if (question.isNotEmpty()) {
                     getResponse(question) { response ->
                         runOnUiThread {
                             binding.txtResponse.text = response
@@ -48,9 +48,14 @@ class MainActivity : AppCompatActivity() {
             }
             false
         })
+
     }
 
     fun getResponse(question: String, callback: (String) -> Unit){
+
+        binding.idTVQuestion.text = question
+        binding.etQuestion.setText("")
+
         val apiKey = "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"
         val url = "https://api.openai.com/v1/completions"
 

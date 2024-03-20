@@ -82,6 +82,7 @@
         </LinearLayout>
 
     </ScrollView>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/idTILQuery"
 
@@ -93,13 +94,14 @@
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
         android:hint="Enter your query"
+        android:orientation="horizontal"
         android:padding="5dp"
         android:textColorHint="@color/white"
         app:hintTextColor="@color/white">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etQuestion"
-            android:layout_width="match_parent"
+            android:layout_width="389dp"
             android:layout_height="match_parent"
             android:background="@color/edt_back_color"
             android:drawableEnd="@drawable/ic_send"
@@ -111,5 +113,6 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="14sp" />
+
     </com.google.android.material.textfield.TextInputLayout>
 </RelativeLayout>
